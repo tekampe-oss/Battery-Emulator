@@ -100,7 +100,6 @@ class PylonBattery : public CanBattery {
   uint16_t charge_cutoff_voltage = 0;
   uint16_t discharge_cutoff_voltage = 0;
   int16_t max_charge_current = 0;
-  int16_t BMS_temperature_dC = 0;
   int16_t max_discharge_current = 0;
   int16_t BMS_temperature_dC = 0;
   uint8_t battery_module_quantity = 0;

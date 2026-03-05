@@ -79,7 +79,6 @@ void PylonBattery::handle_incoming_can_frame(CAN_frame rx_frame) {
       break;
     case 0x7320:
     case 0x7321:
-      ensemble_info_ack = true;
       battery_module_quantity = ((rx_frame.data.u8[1] << 8) | rx_frame.data.u8[0]);
       //For Dyness Batteries
       if(actual_cell_count == 0){  
