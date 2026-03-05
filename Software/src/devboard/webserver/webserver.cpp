@@ -1156,6 +1156,10 @@ String processor(const String& var) {
         powerFloat = static_cast<float>(datalayer.battery2.status.active_power_W);  // Convert to float
         tempMaxFloat = static_cast<float>(datalayer.battery2.status.temperature_max_dC) / 10.0f;  // Convert to float
         tempMinFloat = static_cast<float>(datalayer.battery2.status.temperature_min_dC) / 10.0f;  // Convert to float
+        maxCurrentChargeFloat =
+            static_cast<float>(datalayer.battery2.status.max_charge_current_dA) / 10.0f;  // Convert to float
+        maxCurrentDischargeFloat =
+            static_cast<float>(datalayer.battery2.status.max_discharge_current_dA) / 10.0f;  // Convert to float
         cell_delta_mv = datalayer.battery2.status.cell_max_voltage_mV - datalayer.battery2.status.cell_min_voltage_mV;
 
         if (datalayer.battery.settings.soc_scaling_active)
@@ -1251,6 +1255,10 @@ String processor(const String& var) {
           powerFloat = static_cast<float>(datalayer.battery3.status.active_power_W);                // Convert to float
           tempMaxFloat = static_cast<float>(datalayer.battery3.status.temperature_max_dC) / 10.0f;  // Convert to float
           tempMinFloat = static_cast<float>(datalayer.battery3.status.temperature_min_dC) / 10.0f;  // Convert to float
+          maxCurrentChargeFloat =
+              static_cast<float>(datalayer.battery.status.max_charge_current_dA) / 10.0f;  // Convert to float
+          maxCurrentDischargeFloat =
+              static_cast<float>(datalayer.battery.status.max_discharge_current_dA) / 10.0f;  // Convert to float
           cell_delta_mv = datalayer.battery3.status.cell_max_voltage_mV - datalayer.battery3.status.cell_min_voltage_mV;
 
           if (datalayer.battery.settings.soc_scaling_active)
