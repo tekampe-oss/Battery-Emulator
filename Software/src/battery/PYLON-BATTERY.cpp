@@ -31,6 +31,16 @@ void PylonBattery::update_values() {
     datalayer_battery->status.remaining_capacity_Wh = remaining_capacity_Wh;
   } else {
     datalayer_battery->status.remaining_capacity_Wh = static_cast<uint32_t>(
+  if(total_capacity_Wh > 0){
+    //real Data from Dyness battery
+    datalayer_battery->info.total_capacity_Wh = total_capacity_Wh;
+  }
+
+  if(remaining_capacity_Wh > 0){
+    //real Data from Dyness battery
+    datalayer_battery->status.remaining_capacity_Wh = remaining_capacity_Wh;
+  } else {
+    datalayer_battery->status.remaining_capacity_Wh = static_cast<uint32_t>(
       (static_cast<double>(datalayer_battery->status.real_soc) / 10000) * datalayer_battery->info.total_capacity_Wh);
   }
   // Update cell count if we've received individual cell data
